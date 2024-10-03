@@ -48,6 +48,7 @@ a {
     padding: 0.5rem 1rem;
     min-height: 1.5rem;
     min-width: 8rem;
+    max-width: 8rem;
     font-size: small;
     text-align: center;
     transition: all 200ms;
@@ -135,16 +136,19 @@ main p {
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    /* flex-wrap: wrap; */
 }
 #approche img {
     max-width: 40vw;
+    min-width: 22.5rem;
+    min-height: 15rem;
 }
 #approche h3 {
     margin-bottom: 2rem;   
 }
 .texteapproche {
     max-width: 40vw;
-    margin: 0 2rem;
+    margin: 0 2vw;
 }
 .texteapproche ul  {
     margin-bottom: 2rem;
@@ -223,6 +227,7 @@ main p {
 .accompagnement {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .accompagnement div {
@@ -234,45 +239,40 @@ main p {
     font-weight: 800;
     position: relative;
 }
-.cardacc {
-    width: 15%;
-}
 .accompagnement h2 {
     margin-bottom: 3rem;
+    position: relative;
+}
+.cardacc span{
+    position: relative;
+    width: fit-content;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardacc span::before {
+    content: "";
+    position: absolute;
+    height: 1rem;
+    width: 110%;
+    z-index: -1;
+    top: 1rem;
+}
+.blue span:before {
+    background-color: #3BD8C5;
+}
+.yellow span:before {
+    background-color: #FFE17A;
+}
+.purple span:before {
+    background-color: #CD84EB;
 }
 .accompagnement li {
     margin-bottom: 1rem;
 }
 .accompagnement .btn {
     margin-top: auto;
-}
-.blueshadow {
-    position: absolute;
-    background-color: #84d6eb;
-    height: 1rem;
-    width: 100%;
-    top: -15rem;
-    margin: 0 ;
-    z-index: 0;
-}
-.yellowshadow {
-    position: absolute;
-    background-color: #FFE17A;
-    height: 1rem;
-    width: 100%;
-    top: -15rem;
-    margin: 0 ;
-    z-index: 0;
-}
-.purpleshadow {
-    position: absolute;
-    background-color: #CD84EB;
-    height: 1rem;
-    width: 100%;
-    top: -15rem;
-    margin: 0 ;
-    z-index: 0;
 }
 
 /* No Regret */
@@ -281,27 +281,26 @@ main p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 #noregret div {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
 }
 #noregret article {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid #3BD8C5;
 }
 .cardreg {
-    width: 21vw;
+    width: 20rem;
     margin: 5vh 2vw;
-    display: flex;
-    justify-content: space-between;
     position: relative;
     padding: 1rem;
-
 }
 .cardreg img {
     position: absolute;
@@ -315,4 +314,187 @@ main p {
     display: inline-block;
     margin-bottom: 2rem;
     font-weight: 200;
+}
+
+/* BLOG */
+
+#blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+.blog div:first-child {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blog img {
+    margin: 0 5vw;
+    min-width: 20rem;
+    min-height: 10rem;
+}
+.articleblog {
+    max-width: 60vw;
+}
+.articleblog p, .articleblog h2 {
+    text-align: left;
+    padding-right: 4rem;
+    margin-bottom: 1rem;
+}
+.articleblog h3 {
+    font-size: small;
+    margin-bottom: 2rem;
+}
+.separation2 {
+    background-color: #3BD8C5;
+    height: 1px;
+    width: 85vw;
+    margin-top: 4rem;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #E2E2E2;
+}
+footer section {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 10vw 2rem 40vw;
+}
+footer div a {
+    color: black;
+}
+nav a:hover, footer a:hover {
+    text-decoration-line: underline;
+    color: #3AD8C5;
+}
+.separationvertical {
+    background-color: black;
+    width: 1px;
+    /* margin: 0 2.5vw; */
+}
+footer ul {
+    display: flex;
+    flex-direction: row;
+}
+footer nav a {
+    text-transform: capitalize;
+}
+
+/* MEDIA */
+
+@media screen and (max-width:800px){
+    body {
+        text-align: center;
+    }
+    
+    /* APPROCHE */
+    
+    #approche {
+        flex-direction: column;
+    }
+    .texteapproche {
+       min-width: 90%;
+       margin-top: 1rem;
+    }
+    .separation {
+        margin-top: 1rem;
+    }
+
+    /* GRID METHODE */
+
+    .methode {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d";
+        padding: 0;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .methodearticle {
+        padding: 0;
+        /* margin: 0; */
+    }
+
+    /* BLOG */
+
+    .blog {
+        flex-direction: column;
+    }
+    .blog img {
+        margin-bottom: 1rem;
+    }
+    .articleblog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: none;
+    }
+    .articleblog h2{
+        text-align: center;
+        padding: 0;
+    }
+    .articleblog p {
+        text-align: center;
+        padding: 0;
+    }
+
+    /* FOOTER */
+
+    footer section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    footer section div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    footer div a{
+        display: block;
+        margin: 1rem 0;
+    }
+}
+@media screen and (max-width:600px){
+
+    /* BARRE DE NAVIGATION */
+
+    header section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+        
+    }
+    nav ul li:not(:last-child) {
+        border-right: none;
+        margin-bottom: 1rem;
+    }
+    nav ul li:last-child {
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
 }
