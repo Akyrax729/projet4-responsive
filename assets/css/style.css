@@ -99,11 +99,17 @@ nav a {
 }
 nav ul li:not(:last-child) {
     border-right: 1px solid black;
+}.manger {
+    display: flex;
+    align-items: center;
+}
+.fa-bars {
+    display: none;
 }
 .banner {
     background-image: url(../img/photo-1556139943-4bdca53adf1e\ 1.jpg);
     background-size: cover;
-    height: 35vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,6 +132,9 @@ nav ul li:not(:last-child) {
 
 main h2 {
     text-align: center;
+}
+main h2:first-child {
+    margin-top:  4rem;
 }
 main p {
     text-align: center;
@@ -477,13 +486,16 @@ footer nav a {
     /* BARRE DE NAVIGATION */
 
     header section{
-        flex-direction: column;
+        /* flex-direction: column; */
         justify-content: center;
         align-items: center;
     }
     nav ul {
         flex-direction: column;
-        
+        display: none;
+    }
+    .fa-solid {
+        display: block;
     }
     nav ul li:not(:last-child) {
         border-right: none;
@@ -492,7 +504,24 @@ footer nav a {
     nav ul li:last-child {
         margin-bottom: 1rem;
     }
-
+    .fa-bars {
+        display: block;
+    }
+    .manger {
+        position: relative;
+    }
+    .manger:hover ul {
+        display:block;
+        position: absolute;
+        background-color: rgba(0, 0, 0,0.7);
+        top: -1.9vh;
+        right: -6.5vw;
+        width: 100vw;
+        padding-top: 3rem;
+    }
+    .manger a {
+        color: white;
+    }
     h1 {
         font-size: 42px;
     }
